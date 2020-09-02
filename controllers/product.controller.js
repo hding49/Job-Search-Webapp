@@ -73,3 +73,14 @@ exports.product_search = (req, res, next) => {
             return res.status(200).send(product);
     })
 }
+
+
+exports.EditJob = async (req, res, next) =>{
+    
+
+    await Product.findOneAndUpdate( {title : req.body.old}, {$set: {title : req.body.new} } ).then((updatedDoc)=>{
+        res.send(updatedDoc);         
+         
+  });
+
+}

@@ -21,5 +21,7 @@ router.delete('/:id/delete', product_controller.product_delete);
 
 router.get('/jobsearch/:id', product_controller.product_search);
 
+router.post('/jobedit', product_controller.EditJob);
+
 
 module.exports = router;

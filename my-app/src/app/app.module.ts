@@ -1,20 +1,41 @@
+
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//routes
+import { appRoutes } from './routes';
+import { EditJobComponent } from './edit-job/edit-job.component';
+
+//other
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    EditJobComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    FormsModule,
+
+
   ],
-  providers: [],
+ 
+  
+  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

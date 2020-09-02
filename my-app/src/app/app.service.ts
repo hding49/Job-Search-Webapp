@@ -2,27 +2,29 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from '../environments/environment';
-//import { Home } from '../../../../models/product.model';
 import { Song } from './app.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SongService {
+export class AppService {
   selectedSong: Song = {
     title: '',
     company: '',
     summary: '',
 
   };
- // noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
 
   constructor(private http: HttpClient) { }
 
   searchSong(word){
     //console.log(word);
-    return this.http.get(environment.apiBaseUrl+'/song/open/songsearch/' +word);
-    //console.log(word);
+    return this.http.get(environment.apiBaseUrl+'/jobsearch/' +word);
+    console.log(word);
+  }
+
+  editJob(newName,oldName){
+    return this.http.post(environment.apiBaseUrl+'/jobedit',{old: oldName, new:newName});
   }
 
   show(obj)
@@ -74,5 +76,4 @@ export class SongService {
   
   
     }
-
 }
