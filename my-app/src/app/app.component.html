@@ -22,7 +22,7 @@
       <br/>
       <form id="info"></form>
     
-      <div  *ngIf ="searchIF">
+      <div class='show' *ngIf ="searchIF">
           <ul *ngFor ="let index of this.song; let i = index">
             
             <li>Job Title: {{song[i].title}} 
@@ -33,7 +33,7 @@
             
                 </div>
              
-              <button routerLink="/edit-job"  routerLinkActive="active">Edit Job</button>         
+              <!-- <button routerLink="/edit-job"  routerLinkActive="active">Edit Job</button>          -->
                                      
             </li>
           </ul>

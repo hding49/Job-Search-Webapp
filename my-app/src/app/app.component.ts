@@ -15,7 +15,7 @@ export class AppComponent  {
   showSucessMessage: boolean;
   serverErrorMessages: string;
   public song : any;
-  searchIF = false;
+  searchIF = true;
   detail = new Array;
 
   details = true;
