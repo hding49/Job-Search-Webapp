@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //routes
 import { appRoutes } from './routes';
 import { EditJobComponent } from './edit-job/edit-job.component';
+import { SearchComponent } from './search/search.component';
 
 //other
 
@@ -20,6 +21,7 @@ import { EditJobComponent } from './edit-job/edit-job.component';
   declarations: [
     AppComponent,
     EditJobComponent,
+    SearchComponent,
     
   ],
   imports: [

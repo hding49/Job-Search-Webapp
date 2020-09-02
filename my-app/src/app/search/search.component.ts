@@ -1,16 +1,16 @@
 import { Component , OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
-import {AppService} from './app.service';
-
+import {AppService} from './../app.service';
+import { AppComponent } from '../app.component';
+import { Song } from '../app.model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [AppService]
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class AppComponent  {
+export class SearchComponent implements OnInit {
   title = 'my-app';
   showSucessMessage: boolean;
   serverErrorMessages: string;
@@ -19,6 +19,9 @@ export class AppComponent  {
   detail = new Array;
   public JobEdited : String;
   details = true;
+
+  ngOnInit() {
+  }
 
   constructor(private songService: AppService,private router : Router) { }
 
@@ -63,5 +66,6 @@ getdetails(i) {
   console.log("3");
 }
 
+  
 
 }
