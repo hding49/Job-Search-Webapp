@@ -1,11 +1,9 @@
-
-require('./config/config');
-require('./model/db');
+// app.js
 
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const product = require('./routes/routes'); // Imports routes for the products
+const product = require('./routes/product.route'); // Imports routes for the products
 const app = express();
 
 // serve files in static' folder at root URL '/'
@@ -13,6 +11,7 @@ app.use('/', express.static('./'));
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
+// let dev_db_url = 'mongodb+srv://haoran:allen666666@cluster0-8essi.mongodb.net/test?retryWrites=true&w=majority';
 let dev_db_url = 'mongodb+srv://haoran:hding49@cluster0.l94hk.mongodb.net/test?retryWrites=true&w=majority';
 
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
@@ -25,15 +24,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/products', product);
 
-// error handler
-app.use((err, req, res, next) => {
-    if (err.name === 'ValidationError') {
-        var valErrors = [];
-        Object.keys(err.errors).forEach(key => valErrors.push(err.errors[key].message));
-        res.status(422).send(valErrors)
-    }
-    
+let port = 8080;
+
+app.listen(port, () => {
+    console.log('Server is up and running on port numner ' + port);
 });
 
-//start server
-app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
