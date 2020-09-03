@@ -20,48 +20,48 @@ export class AppComponent  {
   public JobEdited : String;
   details = true;
 
-  constructor(private songService: AppService,private router : Router) { }
+//   constructor(private songService: AppService,private router : Router) { }
 
-  onSubmit(form: NgForm) {
-    var word = document.getElementById("search")["value"];
-    console.log(word);
-    this.songService.searchSong(word).subscribe(
-      res => {
-        console.log(1);
-        this.song = res;
-        console.log(this.song);
+//   onSubmit(form: NgForm) {
+//     var word = document.getElementById("search")["value"];
+//     console.log(word);
+//     this.songService.searchSong(word).subscribe(
+//       res => {
+//         console.log(1);
+//         this.song = res;
+//         console.log(this.song);
       
-      },
-      err => { 
-        console.log(2);
-        console.log(err);
+//       },
+//       err => { 
+//         console.log(2);
+//         console.log(err);
         
-      }
-    );
+//       }
+//     );
 
-}
+// }
 
-edit(object2) {
-  this.JobEdited = object2;
-  console.log(object2);
-  this.router.navigateByUrl('/edit-job');
+// edit(object2) {
+//   this.JobEdited = object2;
+//   console.log(object2);
+//   this.router.navigateByUrl('/edit-job');
   
-}
+// }
 
 
-getdetails(i) {
-  if (this.detail[i] == true)
-  {
-    this.detail[i] = false;
-  }
+// getdetails(i) {
+//   if (this.detail[i] == true)
+//   {
+//     this.detail[i] = false;
+//   }
 
-  else
-  {
-    this.detail[i] = true;
-  }
+//   else
+//   {
+//     this.detail[i] = true;
+//   }
   
-  console.log("3");
-}
+//   console.log("3");
+// }
 
 
 }

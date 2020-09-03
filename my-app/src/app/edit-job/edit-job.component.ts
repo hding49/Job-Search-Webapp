@@ -13,23 +13,23 @@ import { Song } from '../app.model';
 })
 export class EditJobComponent implements OnInit {
   playlistObject = new Song;
-  constructor(private playlistService: AppService, private router : Router, public appcomponent : AppComponent) { }
+  constructor(public playlistService: AppService, private router : Router, public appcomponent : AppComponent) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form : NgForm){
    
-    this.playlistObject.title=form.value.title;
- 
-    console.log(this.playlistObject.title);
 
     this.playlistService.editJob(form.value.title, this.appcomponent.JobEdited).subscribe(
       res => {
-    
-        this.router.navigateByUrl('/playlistread');
+    console.log(this.appcomponent.JobEdited);
+    console.log(form.value.title);
+        this.router.navigateByUrl('/search');
         
         this.resetForm(form);
+
+        alert("You have edited job title!")
       },
       err => {
 

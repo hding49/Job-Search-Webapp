@@ -17,13 +17,13 @@ export class SearchComponent implements OnInit {
   public song : any;
   searchIF = true;
   detail = new Array;
-  public JobEdited : String;
+
   details = true;
 
   ngOnInit() {
   }
 
-  constructor(private songService: AppService,private router : Router) { }
+  constructor(private songService: AppService,private router : Router, public appcomponent : AppComponent) { }
 
   onSubmit(form: NgForm) {
     var word = document.getElementById("search")["value"];
@@ -45,7 +45,7 @@ export class SearchComponent implements OnInit {
 }
 
 edit(object2) {
-  this.JobEdited = object2;
+  this.appcomponent.JobEdited = object2;
   console.log(object2);
   this.router.navigateByUrl('/edit-job');
   
