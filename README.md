@@ -1,5 +1,9 @@
 # Job-Search-Webapp
 
+Data is scraped from Indeed using Node.js and Cheerio.
+
+Code for web crawler is here: https://github.com/hding49/Web-Crawler
+
 Use Angular JS frontend framework to build a single page application
 that allow us to search, edit, and delete scraped data;
 
