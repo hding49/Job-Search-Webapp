@@ -1,6 +1,6 @@
 # Job-Search-Webapp
 
-Data is scraped from Indeed using Node.js and Cheerio.
+Data stored in MongoDB is scraped from Indeed using Node.js and Cheerio.
 
 Code for web crawler is here: https://github.com/hding49/Web-Crawler
 
